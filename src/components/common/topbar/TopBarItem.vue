@@ -37,8 +37,7 @@
 </script>
 
 <style scoped>
-  .top-bar-item{
-    background-color: black;
-    text-align: center;
-  }
+.top-bar-item{
+  text-align: center;
+}
 </style>

@@ -1,12 +1,16 @@
 <template>
-<div>
-</div>
+  <side-bar></side-bar>
 </template>
 
 <script>
-    export default {
-        name: "Bsa"
+  import SideBar from "components/common/sidebar/SideBar";
+
+  export default {
+    name: "Bsa",
+    components: {
+      SideBar
     }
+  }
 </script>
 
 <style scoped>

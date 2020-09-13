@@ -7,8 +7,8 @@
 </template>
 
 <script>
-  import TopBar from "../../common/topbar/TopBar";
-  import TopBarItem from "../../common/topbar/TopBarItem";
+  import TopBar from "components/common/topbar/TopBar";
+  import TopBarItem from "components/common/topbar/TopBarItem";
 
   export default {
     name: "NavTopBar",

@@ -11,10 +11,11 @@
 </script>
 
 <style scoped>
-  #tab-bar {
+  #top-bar {
     display: flex;
     background-color: #333333;
-    color: b0b0b0;
+    height: 49px;
+    text-align: center;
 
     position: fixed;
     left: 0;

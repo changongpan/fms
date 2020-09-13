@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import NavTopBar from "./components/content/navTopBar/NavTopBar";
+  import NavTopBar from "components/content/navTopBar/NavTopBar";
 
   export default {
     name: 'app',
