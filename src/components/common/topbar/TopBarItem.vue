@@ -12,7 +12,7 @@
       path: String,
       activeColor: {
         type: String,
-        default: 'white'
+        default: 'red'
       }
     },
     data() {
@@ -38,6 +38,11 @@
 
 <style scoped>
 .top-bar-item{
+  flex: 1;
   text-align: center;
+  background-color: #ff8198;
+  margin-left: 2px;
+  margin-right: 2px;
+  line-height: 49px;
 }
 </style>

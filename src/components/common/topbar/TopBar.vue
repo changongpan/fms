@@ -13,9 +13,10 @@
 <style scoped>
   #top-bar {
     display: flex;
-    background-color: #333333;
+    /*justify-content: center;*/
+    /*margin: auto;*/
     height: 49px;
-    text-align: center;
+    /*text-align: center;*/
 
     position: fixed;
     left: 0;

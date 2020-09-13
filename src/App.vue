@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="wrapper">
+  <div id="app">
     <nav-top-bar/>
     <router-view/>
   </div>
@@ -17,5 +17,8 @@
 </script>
 
 <style>
-  @import "assets/css/base.css";
+  /*@import "assets/css/base.css";*/
+  #app{
+    text-align: center;
+  }
 </style>

@@ -3,6 +3,18 @@
     <top-bar-item path="/bsa">
       <div slot="item-text" class="topbar-content">舱位计划</div>
     </top-bar-item>
+    <top-bar-item path="/bsa">
+      <div slot="item-text" class="topbar-content">舱位计划</div>
+    </top-bar-item>
+    <top-bar-item path="/bsa">
+      <div slot="item-text" class="topbar-content">舱位计划</div>
+    </top-bar-item>
+    <top-bar-item path="/bsa">
+      <div slot="item-text" class="topbar-content">舱位计划</div>
+    </top-bar-item>
+    <top-bar-item path="/bsa">
+      <div slot="item-text" class="topbar-content">舱位计划</div>
+    </top-bar-item>
   </top-bar>
 </template>
 

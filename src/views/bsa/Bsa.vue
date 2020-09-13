@@ -1,5 +1,5 @@
 <template>
-  <side-bar></side-bar>
+<!--  <side-bar></side-bar>-->
 </template>
 
 <script>
