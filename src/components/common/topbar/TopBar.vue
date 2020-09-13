@@ -1,24 +1,25 @@
 <template>
-  <div id="tab-bar">
+  <div id="top-bar">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: "TabBar"
+    name: "TopBar"
   }
 </script>
 
 <style scoped>
   #tab-bar {
     display: flex;
-    background-color: #f6f6f6;
+    background-color: #333333;
+    color: b0b0b0;
 
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 0;
+    top: 0;
 
     box-shadow: 0 -1px 1px rgba(100,100,100,.2);
   }

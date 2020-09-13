@@ -1,17 +1,17 @@
 <template>
   <div id="app" class="wrapper">
+    <nav-top-bar/>
     <router-view/>
-    <main-tab-bar/>
   </div>
 </template>
 
 <script>
-  import MainTabBar from "components/content/mainTabbar/MainTabBar";
+  import NavTopBar from "./components/content/navTopBar/NavTopBar";
 
   export default {
     name: 'app',
     components: {
-      MainTabBar
+      NavTopBar
     }
   }
 </script>
