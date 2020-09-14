@@ -3,13 +3,16 @@ import axios from 'axios'
 export function request(config) {
   // 1.创建axios的实例
   const instance = axios.create({
-    baseURL: 'http://localhost:80/home/testdata',
+    baseURL: 'http://localhost:80',
     timeout: 5000
   })
 
   // 2.axios的拦截器
   // 2.1.请求拦截的作用
   instance.interceptors.request.use(config => {
+    if(config.method === 'post'){
+      config.data = JSON.stringify(config.data)
+    }
     return config
   }, err => {
     // console.log(err);
