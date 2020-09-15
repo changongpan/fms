@@ -13,16 +13,11 @@
 <style scoped>
   #top-bar {
     display: flex;
-    /*justify-content: center;*/
-    /*margin: auto;*/
     height: 49px;
-    /*text-align: center;*/
+    text-align: center;
 
     position: fixed;
     left: 0;
     right: 0;
-    top: 0;
-
-    box-shadow: 0 -1px 1px rgba(100,100,100,.2);
   }
 </style>

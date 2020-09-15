@@ -10,7 +10,7 @@ export function request(config) {
   // 2.axios的拦截器
   // 2.1.请求拦截的作用
   instance.interceptors.request.use(config => {
-    if(config.method === 'post'){
+    if(config.method === 'post'){ //如果为POST方式，拦截数据进行转换
       config.data = JSON.stringify(config.data)
     }
     return config
@@ -27,4 +27,19 @@ export function request(config) {
 
   // 3.发送真正的网络请求
   return instance(config)
+}
+
+export function dataGet(url,data) {
+  return request({
+    url:url,
+    params:data
+  })
+}
+
+export function dataPost(url,data) {
+  return request({
+    url:url,
+    method:'post',
+    data:data
+  })
 }

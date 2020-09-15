@@ -1,7 +1,9 @@
 <template>
   <!--所有的item都展示同一个图片, 同一个文字-->
   <div class="top-bar-item" @click="itemClick">
-    <div :style="activeStyle"><slot name="item-text"></slot></div>
+    <div :style="activeStyle">
+      <slot name="item-text"></slot>
+    </div>
   </div>
 </template>
 
@@ -12,7 +14,7 @@
       path: String,
       activeColor: {
         type: String,
-        default: 'red'
+        default: 'black'
       }
     },
     data() {
@@ -37,12 +39,10 @@
 </script>
 
 <style scoped>
-.top-bar-item{
-  flex: 1;
-  text-align: center;
-  background-color: #ff8198;
-  margin-left: 2px;
-  margin-right: 2px;
-  line-height: 49px;
-}
+  .top-bar-item {
+    flex: 1;
+    text-align: center;
+    background-color: white;
+    line-height: 49px;
+  }
 </style>
