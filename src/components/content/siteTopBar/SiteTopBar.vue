@@ -1,5 +1,6 @@
 <template>
   <div id="site-top-bar">
+
   </div>
 </template>
 

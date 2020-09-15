@@ -1,5 +1,7 @@
 <template>
-<!--  <side-bar></side-bar>-->
+  <div>
+      <side-bar></side-bar>
+  </div>
 </template>
 
 <script>
@@ -14,5 +16,6 @@
 </script>
 
 <style scoped>
+
 
 </style>

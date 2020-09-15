@@ -4,12 +4,7 @@
       <top-bar-item path="/bsa">
         <div slot="item-text" class="topbar-content">舱位计划</div>
       </top-bar-item>
-      <top-bar-item path="/bsa">
-        <div slot="item-text" class="topbar-content">首页</div>
-      </top-bar-item>
-      <top-bar-item path="/bsa">
-        <div slot="item-text" class="topbar-content">舱位计划</div>
-      </top-bar-item>
+
     </top-bar>
   </div>
 
@@ -30,6 +25,7 @@
 
 <style scoped>
   #nav-top-bar{
+    font-size: 18px;
     display: flex;
     height: 49px;
     text-align: center;
@@ -38,6 +34,9 @@
     left: 0;
     right: 0;
     top: 38px;
+  }
+  .topbar-content{
+    background-color: #f5f5f5;
   }
 
 </style>
