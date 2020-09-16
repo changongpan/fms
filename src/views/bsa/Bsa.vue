@@ -17,8 +17,8 @@
     },
     data(){
       return{
-        flightList:{},
-        cargoList:{}
+        flightList:['DXB','MST','FRA','LAX'],
+        cargoList:[]
       }
     }
   }

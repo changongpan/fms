@@ -17,6 +17,4 @@
     background-color: #e9eef8;
     margin-left: 10px;
   }
-
-
 </style>
