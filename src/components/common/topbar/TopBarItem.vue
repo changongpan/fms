@@ -43,6 +43,6 @@
     flex: 1;
     text-align: center;
     background-color: white;
-    line-height: 49px;
+    padding-top: 25px;
   }
 </style>

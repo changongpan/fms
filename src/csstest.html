@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+</head>
+<body>
+<div id="container">
+  <div id="sub">dddd</div>
+  <div id="sub2">dddd
+  <div id="xxx">xxx</div>
+  </div>
+</div>
+
+<style>
+  #container{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    background-color: #666666;
+    margin: auto;
+  }
+
+  #sub{
+    flex: 1;
+    background-color: #ff8198;
+    text-align: center;
+  }
+  #sub2{
+    flex: 2;
+    background-color: #b0b0a4;
+    text-align: center;
+    width: 60px;
+    align-self: center;
+    position: relative;
+  }
+  #xxx{
+    background-color: aqua;
+    position: absolute;
+    top: 80px;
+    left:0;
+    right:0;
+  }
+
+</style>
+
+
+</body>
+</html>

@@ -10,8 +10,7 @@
 
 <style scoped>
 .side-bar{
-  color: #ff8198;
-  position: fixed;
-  top:60px;
+  width: 142px;
+  background-color: #e9f5fd;
 }
 </style>

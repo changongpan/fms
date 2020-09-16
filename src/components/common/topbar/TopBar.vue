@@ -12,12 +12,9 @@
 
 <style scoped>
   #top-bar {
+    flex:1;
     display: flex;
     height: 49px;
     text-align: center;
-
-    position: fixed;
-    left: 0;
-    right: 0;
   }
 </style>
