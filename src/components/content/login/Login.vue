@@ -43,32 +43,5 @@
 </script>
 
 <style scoped>
-  input {
-    font-family: "Microsoft YaHei";
-    height: 32px;
-    width: 282px;
-    border: 1px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #e0e0e0;
-    padding: 2px;
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius: 5px;
-    border-collapse: collapse;
-  }
-
-  button {
-    color: white;
-    font-size: 18px;
-    font-family: "Microsoft YaHei";
-    padding: 0;
-    margin: 0;
-    border: none;
-    background-color: #00a2e4;
-    height: 38px;
-    width: 300px;
-    border-radius: 5px;
-  }
 
 </style>

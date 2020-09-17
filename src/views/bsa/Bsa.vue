@@ -1,19 +1,19 @@
 <template>
   <div id="bsa">
     <side-bar :flight-list="flightList"></side-bar>
-    <bsa-list :cargo-list="cargoList"></bsa-list>
+    <bsa-container :cargo-list="cargoList"></bsa-container>
   </div>
 </template>
 
 <script>
   import SideBar from "components/common/sidebar/SideBar";
-  import BsaList from "views/bsa/BsaList";
+  import BsaContainer from "views/bsa/BasContainer";
 
   export default {
     name: "Bsa",
     components: {
       SideBar,
-      BsaList
+      BsaContainer
     },
     data(){
       return{
