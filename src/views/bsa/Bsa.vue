@@ -7,7 +7,7 @@
 
 <script>
   import SideBar from "components/common/sidebar/SideBar";
-  import BsaContainer from "views/bsa/BasContainer";
+  import BsaContainer from "views/bsa/BsaContainer";
 
   export default {
     name: "Bsa",
