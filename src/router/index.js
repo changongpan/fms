@@ -1,18 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-const Login = () => import('components/content/login/Login')
+const Bsa = () => import('views/bsa/Bsa')
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '',
-    redirect: '/login'
+    redirect: '/bsa'
   },
   {
-    path: '/login',
-    component: Login
+    path: '/bsa',
+    component: Bsa
   }
 ]
 
