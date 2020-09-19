@@ -1,6 +1,5 @@
 <template>
   <div id="login">
-
     <p><input type="text" name="username" v-model="loginData.username" placeholder="输入公司邮箱" @focus="focus"></p>
     <p><input type="password" name="password" v-model="loginData.password" placeholder="输入密码" @focus="focus"></p>
     <div v-if="loginNote">
@@ -49,7 +48,6 @@
       }
     }
   }
-
 </script>
 
 <style scoped>
@@ -62,5 +60,4 @@
     left: 0;
     right: 0;
   }
-
 </style>

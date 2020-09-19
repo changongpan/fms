@@ -1,6 +1,6 @@
 <template>
 <div id="content-header">
-  <slot name="content-header"></slot>
+  <slot></slot>
 </div>
 </template>
 
@@ -13,5 +13,6 @@
 <style scoped>
 #content-header{
   flex: 0;
+  display: flex;
 }
 </style>

@@ -1,20 +1,23 @@
 <template>
-<div id="content-view">
-<slot name="content-view"></slot>
-</div>
+  <div id="content-view">
+    <slot name="content-view"></slot>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "ContentView"
-    }
+  export default {
+    name: "ContentView"
+  }
 </script>
 
 <style scoped>
-#content-view{
-  flex:1;
-  background-color: #e2d5f3;
+  #content-view {
+    flex: 1;
+    width: 1200px;
+    align-self: center;
+    background-color: #e2d5f3;
 
-  display: flex;
-}
+    display: flex;
+    flex-direction: column;
+  }
 </style>
