@@ -1,10 +1,14 @@
 <template>
+<div id="nav-bar-content">
+<nav-bar-items>
 
+</nav-bar-items>
+</div>
 </template>
 
 <script>
     export default {
-        name: "SideBarItem"
+        name: "NavBarContent"
     }
 </script>
 

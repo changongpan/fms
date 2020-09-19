@@ -1,5 +1,6 @@
 <template>
   <div id="main-view">
+<<<<<<< HEAD
     <top-status-bar></top-status-bar>
     <content-view>
       <login slot="content-view" v-if="!isLogged" @isLogin="login"></login>
@@ -28,11 +29,11 @@
         </content-footer>
       </div>
     </content-view>
+
   </div>
 </template>
 
 <script>
-
   import TopStatusBar from "components/common/frameworks/TopStatusBar";
   import ContentView from "components/common/frameworks/ContentView";
   import ContentHeader from "components/common/frameworks/contentHeader/ContentHeader";
@@ -41,12 +42,17 @@
   import Login from "components/content/login/Login";
   import NavBar from "components/common/navbar/NavBar";
   import NavBarItem from "components/common/navbar/NavBarItem";
-
   export default {
     name: "MainView",
     data() {
       return {
         isLogged: false
+      }
+    },
+
+    methods: {
+      login() {
+        this.isLogged = true
       }
     },
     components: {
@@ -55,19 +61,15 @@
       ContentHeader,
       ContentBody,
       ContentFooter,
-      Login,
       NavBar,
-      NavBarItem
-    },
-    methods: {
-      login() {
-        this.isLogged = true
-      }
+      Login,
+      NavBarContent,
     }
   }
 </script>
 
 <style scoped>
+<<<<<<< HEAD
   #main-view {
     display: flex;
     flex-direction: column;
@@ -75,5 +77,14 @@
   }
   #logo {
     width: 140px;
+=======
+#logo-img{
+  flex: 0;
+  height: 48px;
+  padding-right: 3px;
+}
+  #logo{
+    height: 48px;
+>>>>>>> f01344fedc2f3bef25e5468390ada50940e61828
   }
 </style>

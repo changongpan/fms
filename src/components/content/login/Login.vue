@@ -52,7 +52,7 @@
 
 <style scoped>
   #login {
-    /*flex: 1;*/
+    flex: 1;
     background-color: #eeeeee;
     position: fixed;
     height: 100vh;
