@@ -1,28 +1,28 @@
 <template>
   <div id="main-view">
-<<<<<<< HEAD
     <top-status-bar></top-status-bar>
     <content-view>
-      <login slot="content-view" v-if="!isLogged" @isLogin="login"></login>
-      <div class="slot-column" slot="content-view" v-if="isLogged">
+      <router-view v-if="!isLogged" @isLogin="login"></router-view>
+      <div class="slot-column" v-if="isLogged">
         <content-header>
           <div id="logo_img"><a href="http://www.handa-group.com" target="window"><img id="logo"
-            src="../assets/img/Logo_HDI.png"/></a></div>
-          <nav-bar class="slot-row">
-            <nav-bar-item><div slot="item-text">首页</div></nav-bar-item>
-            <nav-bar-item><div slot="item-text">询价</div></nav-bar-item>
-            <nav-bar-item><div slot="item-text">订单</div></nav-bar-item>
-            <nav-bar-item><div slot="item-text">航线</div></nav-bar-item>
-            <nav-bar-item><div slot="item-text">操作</div></nav-bar-item>
-            <nav-bar-item><div slot="item-text">账务</div></nav-bar-item>
-            <nav-bar-item><div slot="item-text">合作伙伴</div></nav-bar-item>
-            <nav-bar-item><div slot="item-text">我的公司</div></nav-bar-item>
-            <nav-bar-item><div slot="item-text">工作指南</div></nav-bar-item>
+            src="~assets/img/Logo_HDI.png"/></a></div>
+          <nav-bar>
+            <nav-bar-item path="/home"><span slot="item-text">首页</span></nav-bar-item>
+            <nav-bar-item path="/inquiry"><span slot="item-text">询价</span></nav-bar-item>
+            <nav-bar-item path="/order"><span slot="item-text">订单</span></nav-bar-item>
+            <nav-bar-item path="/route"><span slot="item-text">航线</span></nav-bar-item>
+            <nav-bar-item path="/opt"><span slot="item-text">操作</span></nav-bar-item>
+            <nav-bar-item path="/finance"><span slot="item-text">账务</span></nav-bar-item>
+            <nav-bar-item path="/partner"><span slot="item-text">合作伙伴</span></nav-bar-item>
+            <nav-bar-item path="/company"><span slot="item-text">我的公司</span></nav-bar-item>
+            <nav-bar-item path="/guide"><span slot="item-text">工作指南</span></nav-bar-item>
           </nav-bar>
         </content-header>
         <content-body>
-          <div slot="content-body">22</div>
-
+          <div>
+            <router-view></router-view>
+          </div>
         </content-body>
         <content-footer>
           <div slot="content-footer">33</div>
@@ -46,13 +46,13 @@
     name: "MainView",
     data() {
       return {
-        isLogged: false
+        isLogged: false,
       }
     },
-
     methods: {
       login() {
         this.isLogged = true
+        this.$router.replace('/home')
       }
     },
     components: {
@@ -62,14 +62,13 @@
       ContentBody,
       ContentFooter,
       NavBar,
+      NavBarItem,
       Login,
-      NavBarContent,
     }
   }
 </script>
 
 <style scoped>
-<<<<<<< HEAD
   #main-view {
     display: flex;
     flex-direction: column;
@@ -77,14 +76,5 @@
   }
   #logo {
     width: 140px;
-=======
-#logo-img{
-  flex: 0;
-  height: 48px;
-  padding-right: 3px;
-}
-  #logo{
-    height: 48px;
->>>>>>> f01344fedc2f3bef25e5468390ada50940e61828
   }
 </style>

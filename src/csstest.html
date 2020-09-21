@@ -6,14 +6,22 @@
 </head>
 <body>
 <div id="container">
-  <div id="sub">dddd</div>
+  <span>ggg<span>jjj</span></span>
+  kkk<span id="ll">kkk</span>
+  <span>ggg</span><span>ggg</span>
+  <div id="sub">
+    <div>
+      <div>kfffkk</div>
+    </div>
+    <span id="span1">dddd</span>
+  </div>
   <div id="sub2">dddd
-  <div id="xxx">xxx</div>
+    <div id="xxx">xxx</div>
   </div>
 </div>
 
 <style>
-  #container{
+  #container {
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -22,12 +30,17 @@
     margin: auto;
   }
 
-  #sub{
-    flex: 1;
+  #sub {
+    /*flex: 1;*/
     background-color: #ff8198;
     text-align: center;
   }
-  #sub2{
+
+  #span1 {
+    /*margin: 0;*/
+  }
+
+  #sub2 {
     flex: 2;
     background-color: #b0b0a4;
     text-align: center;
@@ -35,12 +48,13 @@
     align-self: center;
     position: relative;
   }
-  #xxx{
+
+  #xxx {
     background-color: aqua;
     position: absolute;
     top: 80px;
-    left:0;
-    right:0;
+    left: 0;
+    right: 0;
   }
 
 </style>

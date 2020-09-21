@@ -12,6 +12,8 @@
 
 <style scoped>
 #content-header{
+  margin-top: 10px;
+  margin-bottom: 6px;
   flex: 0;
   display: flex;
 }

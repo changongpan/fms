@@ -1,12 +1,12 @@
 <template>
-  <div id="content-footer">
-    <slot></slot>
-  </div>
+<div id="guide">
+  guide
+</div>
 </template>
 
 <script>
     export default {
-        name: "contentFooter"
+        name: "Guide"
     }
 </script>
 

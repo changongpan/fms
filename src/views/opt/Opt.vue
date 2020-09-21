@@ -1,12 +1,10 @@
 <template>
-  <div id="content-footer">
-    <slot></slot>
-  </div>
+
 </template>
 
 <script>
     export default {
-        name: "contentFooter"
+        name: "Opt"
     }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div id="content-view">
-    <slot name="content-view"></slot>
+    <slot></slot>
   </div>
 </template>
 
@@ -15,7 +15,6 @@
     flex: 1;
     width: 1200px;
     align-self: center;
-    background-color: #e2d5f3;
 
     display: flex;
     flex-direction: column;
