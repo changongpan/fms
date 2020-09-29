@@ -20,9 +20,7 @@
           </nav-bar>
         </content-header>
         <content-body>
-          <div>
             <router-view></router-view>
-          </div>
         </content-body>
         <content-footer>
           <div slot="content-footer">33</div>

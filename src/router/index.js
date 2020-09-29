@@ -12,6 +12,12 @@ const Partner = () => import('views/partner/Partner')
 const Company = () => import('views/company/Company')
 const Guide = () => import('views/guide/Guide')
 
+const AddFlight = () => import('views/route/AddFlight')
+const CurrentFlight = () => import('views/route/CurrentFlight')
+const HistoryFlight = () => import('views/route/HistoryFlight')
+const AWBManage = () => import('views/route/AWBManage')
+const AirRate = () => import('views/route/AirRate')
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -37,7 +43,29 @@ const routes = [
   },
   {
     path: '/route',
-    component: Route
+    component: Route,
+    children: [
+      {
+        path: 'addflight',
+        component: AddFlight
+      },
+      {
+        path: 'currentflight',
+        component: CurrentFlight
+      },
+      {
+        path: 'historyflight',
+        component: HistoryFlight
+      },
+      {
+        path: 'awbmanage',
+        component: AWBManage
+      },
+      {
+        path: 'airrate',
+        component: AirRate
+      }
+    ]
   },
   {
     path: '/opt',
