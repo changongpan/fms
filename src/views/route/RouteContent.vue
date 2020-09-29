@@ -12,8 +12,8 @@
 </template>
 
 <script>
-  import NavBar from "../../components/common/navbar/NavBar";
-  import NavBarItem from "../../components/common/navbar/NavBarItem";
+  import NavBar from "components/common/navbar/NavBar";
+  import NavBarItem from "components/common/navbar/NavBarItem";
 
   export default {
     name: "RouteContent",

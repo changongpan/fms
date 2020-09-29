@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <slot name="nav-bar-items"></slot>
+    <slot></slot>
   </div>
 </template>
 

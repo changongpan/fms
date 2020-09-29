@@ -37,7 +37,7 @@
               this.newFlight
             ).then(res => {
               if (res.data == 'success') {
-
+                console.log('added');
               } else {
               }
             }).catch(err => {
