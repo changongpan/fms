@@ -28,7 +28,7 @@
     methods: {
       login() {
         dataPost(
-          'home/testdata',
+          'home/myHome',
           this.loginData
         ).then(res => {
           if (res.data == 'success') {

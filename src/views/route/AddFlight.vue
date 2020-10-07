@@ -33,7 +33,7 @@
       methods:{
           addFlight(){
             dataGet(
-              'home/addflight',
+              'home/myhome',
               this.newFlight
             ).then(res => {
               if (res.data == 'success') {
