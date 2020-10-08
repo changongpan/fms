@@ -23,7 +23,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '',
-    redirect: '/login'
+    redirect: '/route/addflight'
   },
   {
     path: '/login',

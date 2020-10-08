@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import {dataGet} from "network/request";
+  import {dataPost} from "network/request";
 
   export default {
         name: "AddFlight",
@@ -32,8 +32,8 @@
       },
       methods:{
           addFlight(){
-            dataGet(
-              'home/myhome',
+            dataPost(
+              'routemanage/addflight',
               this.newFlight
             ).then(res => {
               if (res.data == 'success') {

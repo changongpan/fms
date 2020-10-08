@@ -1,6 +1,6 @@
 <template>
   <div id="main-view">
-    <top-status-bar></top-status-bar>
+    <top-status-bar v-if="false"></top-status-bar>
     <content-view>
       <router-view v-if="!isLogged" @isLogin="login"></router-view>
       <div class="slot-column" v-if="isLogged">
