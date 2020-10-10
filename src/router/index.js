@@ -23,7 +23,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '',
-    redirect: '/route/addflight'
+    redirect: '/route/'
   },
   {
     path: '/login',
@@ -45,10 +45,6 @@ const routes = [
     path: '/route',
     component: Route,
     children: [
-      {
-        path: 'addflight',
-        component: AddFlight
-      },
       {
         path: 'currentflight',
         component: CurrentFlight

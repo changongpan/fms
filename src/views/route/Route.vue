@@ -1,9 +1,9 @@
 <template>
   <div id="route">
+    <route-content></route-content>
     <flight-list>
       <flight-list-item></flight-list-item>
     </flight-list>
-    <route-content></route-content>
   </div>
 </template>
 
