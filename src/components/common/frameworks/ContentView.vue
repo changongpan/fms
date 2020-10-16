@@ -13,7 +13,7 @@
 <style scoped>
   #content-view {
     flex: 1;
-    width: 1200px;
+    width: 88%;
     align-self: center;
 
     display: flex;

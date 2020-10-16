@@ -3,7 +3,7 @@
     <el-form :model="newFlight" :rules="newFlightRules" ref="newFlight" label-width="100px" class="demo-ruleForm">
       <el-form-item label="起运港" prop="flightPOL">
         <el-input @focus="showMessage('flightPOL')" v-model="newFlight.flightPOL" maxlength="3"
-                  style="text-transform:uppercase;"
+                  style="text-transform:uppercase;" autocomplete="on"
                   @input="newFlight.flightPOL=$event.replace(/[^a-zA-Z]/g,'').toUpperCase()"></el-input>
       </el-form-item>
       <el-form-item label="目的港" prop="flightPOD">
@@ -15,7 +15,7 @@
         <el-input @focus="showMessage('flightNo')" v-model="newFlight.flightNo" maxlength="10"
                   style="text-transform:uppercase;" @input="flightNoInput"></el-input>
       </el-form-item>
-      <el-form-item label="航班日期" prop="originDate" required>
+      <el-form-item label="航班日期" prop="originDate">
         <el-date-picker type="date" placeholder="选择日期" v-model="newFlight.originDate"
                         @change="changeDate"
                         style="width: 400px;"></el-date-picker>
@@ -145,19 +145,6 @@
         }).catch(err => {
         })
       },
-      dateFormat(originDate){
-        let time = new Date(originDate * 1000);
-        let year = time.getFullYear();
-        let month = time.getMonth() + 1;
-        let date = time.getDate();
-        let hours = time.getHours();
-        let minutes = time.getMinutes();
-        let seconds = time.getSeconds();
-        console.log(year + '-' + this.add0(month) + '-' + this.add0(date) + ' ' + this.add0(hours) + ':' + this.add0(minutes) + ':' + this.add0(seconds));
-      },
-      add0(m) {
-        return m < 10 ? '0' + m : m
-      }
     }
   }
 </script>
