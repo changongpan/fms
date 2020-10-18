@@ -16,5 +16,5 @@
 </script>
 
 <style>
-  /*@import "assets/css/hdibase.css";*/
+  @import "assets/css/hdibase.css";
 </style>

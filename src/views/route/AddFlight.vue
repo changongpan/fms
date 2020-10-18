@@ -108,7 +108,6 @@
       },
       //提交新增航班信息
       submitNewFlight(newFlight) {
-        console.log(this.newFlight);
         this.$refs[newFlight].validate((valid) => {
           if (valid) {
             this.addFlight()

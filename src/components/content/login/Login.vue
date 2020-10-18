@@ -1,27 +1,27 @@
 <template>
   <div id="login">
-    <el-form :model="newLogin" :rules="loginRules" ref="newLogin" label-width="100px">
-      <el-form-item label="用户名" prop="username" style="width: 460px">
+    <el-form :model="newLogin" :rules="loginRules" ref="newLogin" label-width="20%" class="demo-ruleForm">
+      <el-form-item label="用户名" prop="username">
         <el-input placeholder="请输入用户名（公司邮箱）"
                   prefix-icon="el-icon-user" clearable @focus="clearErr('username')" v-model="newLogin.username"
                   onkeyup="this.value=this.value.replace(/\s+/g,'')"></el-input>
       </el-form-item>
-      <el-form-item label="密码" prop="password" style="width: 460px">
+      <el-form-item label="密码" prop="password">
         <el-input type="password" placeholder="请输入密码（区分大小写）"
                   prefix-icon="el-icon-key" clearable @focus="clearErr('password')" v-model="newLogin.password"
                   onkeyup="this.value=this.value.replace(/\s+/g,'')"></el-input>
       </el-form-item>
-      <el-form-item style="width: 460px" v-if="">
-        <el-alert
-          title="错误提示的文案" type="error" show-icon>
+      <el-form-item >
+        <el-alert style="line-height: 10px"
+          :title="loginErr" type="error" :closable="false" show-icon v-if="loginErr">
         </el-alert>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="login()" style="width: 166px">登录</el-button>
-        <el-button type="warning" @click="reset('newLogin')" style="width: 166px">重填</el-button>
+        <el-button type="primary" @click="submitLogin('newLogin')" style="width: 46%">登录</el-button>
+        <el-button type="warning" @click="reset('newLogin')" style="margin-left:8%; width:46%">重填</el-button>
       </el-form-item>
       <el-form-item>
-        <el-checkbox label="七天内记住密码" v-model="newLogin.rememberPsd"></el-checkbox>
+        <el-checkbox label="七天内记住密码" :value="newLogin.isRemember === '1'" @change="val => $set(newLogin,'isRemember',val ? '1' : '0')"></el-checkbox>
       </el-form-item>
     </el-form>
   </div>
@@ -37,57 +37,75 @@
         newLogin: {
           username: '',
           password: '',
-          rememberPsd: false,
-          loginRes:false
+          isRemember: false,
         },
         loginRules: {
           username: [{required: true, message: '用户名不能为空', trigger: 'blur'}],
           password: [{required: true, message: '密码不能为空', trigger: 'blur'}]
         },
-        loginNote: ''
+        loginErr: ''
       }
     },
     methods: {
       //点击输入框，警告消息消失
       clearErr(prop) {
-        this.$refs['newLogin'].clearValidate(prop);
+        setTimeout(()=>{
+          this.$refs['newLogin'].clearValidate(prop);
+          this.loginErr=''
+        },100)
+      },
+      //提交登录信息
+      submitLogin(newLogin) {
+        this.$refs[newLogin].validate((valid) => {
+          if (valid) {
+            this.login();
+          } else {
+            return false;
+          }
+        });
       },
       //登录
       login() {
         dataPost(
-          'login/newlogin',
+          'home/myHome',
           this.newLogin
         ).then(res => {
-          if (res.loginRes == 'success') {
-            this.loginNote = ''
-            this.$emit('isLogin')
+          if (res.data==='success') {
+            this.$cookies.set('username',this.newLogin.username,'7d');
+            this.$cookies.set('password',this.newLogin.password,'7d');
+            this.$cookies.set('isRemember',this.newLogin.isRemember,'7d');
+            this.$refs['newLogin'].resetFields();
+            this.newLogin.isRemember=false;
+            this.$store.commit('setLogin',true);
+            this.$emit('isLogin');
           } else {
-            this.loginNote = '用户名或者密码错误'
+            this.loginErr = '用户名或者密码错误';
+            return false;
           }
         }).catch(err => {
-          this.loginNote = '网络连接错误，请检查网络'
+          this.loginErr = '网络连接错误，请检查网络';
+          return false;
         })
       },
       reset(newLogin) {
         this.$refs[newLogin].resetFields();
-      },
-      focus() {
-        setTimeout(() => {
-          this.loginNote = ''
-        }, 100)
+        this.loginErr=''
       }
     },
     mounted() {
       this.newLogin.username = this.$cookies.get('username')
       this.newLogin.password = this.$cookies.get('password')
-      this.newLogin.loginRes = this.$cookies.get('loginRes')
-      console.log(this.newLogin.username);
-      console.log(this.newLogin.password);
-      console.log(this.newLogin.loginRes);
+      this.newLogin.isRemember = this.$cookies.get('isRemember')
     }
   }
 </script>
 
 <style scoped>
-
+  .el-form{
+    padding-top: 10%;
+    margin-left: 30%;
+  }
+  .el-form-item{
+    width: 60%;
+  }
 </style>
