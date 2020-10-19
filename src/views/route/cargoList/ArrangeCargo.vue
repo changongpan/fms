@@ -1,10 +1,10 @@
 <template>
-  <div>ulds</div>
+
 </template>
 
 <script>
     export default {
-        name: "ArrangedULD"
+        name: "ArrangeCargo"
     }
 </script>
 

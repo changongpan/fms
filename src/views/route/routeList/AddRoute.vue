@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "bsaCurrentList"
+        name: "AddRoute"
     }
 </script>
 

@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "AirRate"
+        name: "RouteList"
     }
 </script>
 

@@ -13,13 +13,13 @@
             <nav-bar-item path="/order"><span slot="item-text">订单</span></nav-bar-item>
             <nav-bar-item path="/opt"><span slot="item-text">操作</span></nav-bar-item>
             <nav-bar-item path="/finance"><span slot="item-text">财务</span></nav-bar-item>
-            <nav-bar-item path="/company"><span slot="item-text">行政</span></nav-bar-item>
             <nav-bar-item path="/partner"><span slot="item-text">合作伙伴</span></nav-bar-item>
+            <nav-bar-item path="/company"><span slot="item-text">我的公司</span></nav-bar-item>
             <nav-bar-item path="/guide"><span slot="item-text">工作指南</span></nav-bar-item>
           </nav-bar>
         </el-header>
         <el-main>
-          <router-view v-if="!isLogged" @isLogin="login"></router-view>
+          <router-view @isLogin="login"></router-view>
         </el-main>
       </el-main>
     </el-container>
@@ -35,6 +35,7 @@
   import Login from "components/content/login/Login";
   import NavBar from "components/common/navbar/NavBar";
   import NavBarItem from "components/common/navbar/NavBarItem";
+
   export default {
     name: "MainView",
     data() {
@@ -49,16 +50,19 @@
       }
     },
     components: {
-      TopStatusBar,
-      ContentView,
-      ContentHeader,
-      ContentBody,
-      ContentFooter,
       NavBar,
       NavBarItem,
       Login,
     }
   }
+
+  // router.beforeEach((to, from, next) => {
+  //   // if (to.name !== 'Login' && ! store.state.isLogged) next({ name: 'Login' })
+  //   // else
+  //   console.log(store.state.isLogged);
+  //   next()
+  // })
+
 </script>
 
 <style scoped>

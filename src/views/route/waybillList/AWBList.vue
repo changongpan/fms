@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "bsaFinishedList"
+        name: "AWBList"
     }
 </script>
 

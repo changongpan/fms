@@ -1,6 +1,6 @@
 <template>
   <div id="login">
-    <el-form :model="newLogin" :rules="loginRules" ref="newLogin" label-width="20%" class="demo-ruleForm">
+    <el-form :model="newLogin" :rules="loginRules" ref="newLogin" label-width="25%">
       <el-form-item label="用户名" prop="username">
         <el-input placeholder="请输入用户名（公司邮箱）"
                   prefix-icon="el-icon-user" clearable @focus="clearErr('username')" v-model="newLogin.username"
@@ -102,10 +102,10 @@
 
 <style scoped>
   .el-form{
-    padding-top: 10%;
-    margin-left: 30%;
+    padding-top: 8%;
+    margin-left: 25%;
   }
   .el-form-item{
-    width: 60%;
+    width: 50%;
   }
 </style>
