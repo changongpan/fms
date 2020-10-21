@@ -1,10 +1,13 @@
 <template>
+<div id="flight-list">
 
+</div>
 </template>
 
 <script>
     export default {
-        name: "FlightList"
+        name: "FlightList",
+
     }
 </script>
 

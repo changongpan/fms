@@ -19,6 +19,7 @@ const Guide = () => import('views/guide/Guide')
 // const HistoryFlight = () => import('views/route/HistoryFlight')
 // const AWBManage = () => import('views/route/AWBManage')
 // const AirRate = () => import('views/route/AirRate')
+ const FlightList = () => import('views/route/flightList/FlightList')
 
 Vue.use(VueRouter)
 
@@ -46,24 +47,24 @@ const routes = [
   {
     path: '/route',
     component: Route,
-    // children: [
-    //   {
-    //     path: 'currentflight',
-    //     component: CurrentFlight
-    //   },
-    //   {
-    //     path: 'historyflight',
-    //     component: HistoryFlight
-    //   },
-    //   {
-    //     path: 'awbmanage',
-    //     component: AWBManage
-    //   },
-    //   {
-    //     path: 'airrate',
-    //     component: AirRate
-    //   }
-    // ],
+    children: [
+      {
+        path: 'flightList',
+        component: FlightList
+      },
+      // {
+      //   path: 'historyflight',
+      //   component: HistoryFlight
+      // },
+      // {
+      //   path: 'awbmanage',
+      //   component: AWBManage
+      // },
+      // {
+      //   path: 'airrate',
+      //   component: AirRate
+      // }
+    ],
     name:'Route',
     meta:{
       title:'航线'

@@ -1,27 +1,29 @@
 <template>
   <div class="add-flight">
-    <el-form :model="newFlight" :rules="newFlightRules" ref="newFlight" label-width="100px" class="demo-ruleForm">
+    <h2 style="margin-left: 20%">增加新航班</h2>
+    <el-form :model="newFlight" :rules="newFlightRules" ref="newFlight" label-width="20%" class="demo-ruleForm"
+             size="mini" style="border:1px solid darkgray;padding: 18px 0 0 0;margin: 0 6% 0 6%">
       <el-form-item label="起运港" prop="flightPOL">
-        <el-input @focus="showMessage('flightPOL')" v-model="newFlight.flightPOL" maxlength="3"
-                  style="text-transform:uppercase;" autocomplete="on"
+        <el-input @focus="clearErr('flightPOL')" v-model="newFlight.flightPOL" maxlength="3"
+                  style="text-transform:uppercase;"
                   @input="newFlight.flightPOL=$event.replace(/[^a-zA-Z]/g,'').toUpperCase()"></el-input>
       </el-form-item>
       <el-form-item label="目的港" prop="flightPOD">
-        <el-input @focus="showMessage('flightPOD')" v-model="newFlight.flightPOD" maxlength="3"
+        <el-input @focus="clearErr('flightPOD')" v-model="newFlight.flightPOD" maxlength="3"
                   style="text-transform:uppercase;"
                   @input="newFlight.flightPOD=$event.replace(/[^a-zA-Z]/g,'').toUpperCase()"></el-input>
       </el-form-item>
       <el-form-item label="航班号" prop="flightNo">
-        <el-input @focus="showMessage('flightNo')" v-model="newFlight.flightNo" maxlength="10"
+        <el-input @focus="clearErr('flightNo')" v-model="newFlight.flightNo" maxlength="10"
                   style="text-transform:uppercase;" @input="flightNoInput"></el-input>
       </el-form-item>
       <el-form-item label="航班日期" prop="originDate">
         <el-date-picker type="date" placeholder="选择日期" v-model="newFlight.originDate"
                         @change="changeDate"
-                        style="width: 400px;"></el-date-picker>
+                        style="width: 80%;"></el-date-picker>
       </el-form-item>
       <el-form-item label="航班型号" prop="flightType">
-        <el-input @focus="showMessage('flightType')" v-model="newFlight.flightType" maxlength="10"
+        <el-input @focus="clearErr('flightType')" v-model="newFlight.flightType" maxlength="10"
                   style="text-transform:uppercase;"
                   @input="newFlight.flightType=$event.replace(/[^\w\.\/]/ig,'').toUpperCase()"></el-input>
       </el-form-item>
@@ -29,12 +31,12 @@
         <el-input v-model="newFlight.flightAirline" :disabled="true"></el-input>
       </el-form-item>
       <el-form-item label="最大载量" prop="flightMaxLoad">
-        <el-input @focus="showMessage('flightMaxLoad')" v-model="newFlight.flightMaxLoad"
+        <el-input @focus="clearErr('flightMaxLoad')" v-model="newFlight.flightMaxLoad"
                   style="text-transform:uppercase;" @input="onlyNumber"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitNewFlight('newFlight')" style="width: 180px">提交</el-button>
-        <el-button type="warning" @click="resetForm('newFlight')" style="width: 180px">重置</el-button>
+        <el-button type="primary" @click="submitNewFlight('newFlight')" style="width: 36%">提交</el-button>
+        <el-button type="warning" @click="resetForm('newFlight')" style="width: 36%;margin-left: 8%">重置</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -103,7 +105,7 @@
         this.newFlight.flightAirline = this.newFlight.flightNo.slice(0, 2)
       },
       //点击输入框，警告消息消失
-      showMessage(prop) {
+      clearErr(prop) {
         this.$refs['newFlight'].clearValidate(prop);
       },
       //提交新增航班信息
@@ -150,6 +152,10 @@
 
 <style scoped>
   .el-input {
-    width: 400px;
+    width: 80%;
+  }
+  .el-form {
+    height: 800px;
+    overflow: auto;
   }
 </style>

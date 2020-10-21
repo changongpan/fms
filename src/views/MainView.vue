@@ -1,8 +1,10 @@
 <template>
   <div id="main-view">
     <el-container>
-      <el-header height="38px" style="background-color: #231915"></el-header>
-      <el-main style="width: 88%; margin: auto">
+      <el-header height="38px" style="background-color: #231915">
+        <top-status :username="username"></top-status>
+      </el-header>
+      <el-main style="width: 88%;margin:auto;display: flex;flex-direction: column">
         <el-header v-if="isLogged">
           <div id="logo_img"><a href="http://www.handa-group.com" target="window">
             <img id="logo" src="~assets/img/Logo_HDI.png"/></a></div>
@@ -18,8 +20,8 @@
             <nav-bar-item path="/guide"><span slot="item-text">工作指南</span></nav-bar-item>
           </nav-bar>
         </el-header>
-        <el-main>
-          <router-view @isLogin="login"></router-view>
+        <el-main style="background-color: azure;flex: 1">
+          <router-view @isLogin="login()"></router-view>
         </el-main>
       </el-main>
     </el-container>
@@ -27,25 +29,23 @@
 </template>
 
 <script>
-  import TopStatusBar from "components/common/frameworks/TopStatusBar";
-  import ContentView from "components/common/frameworks/ContentView";
-  import ContentHeader from "components/common/frameworks/contentHeader/ContentHeader";
-  import ContentBody from "components/common/frameworks/contentBody/ContentBody";
-  import ContentFooter from "components/common/frameworks/contentFooter/ContentFooter";
   import Login from "components/content/login/Login";
   import NavBar from "components/common/navbar/NavBar";
   import NavBarItem from "components/common/navbar/NavBarItem";
+  import TopStatus from "components/content/login/TopStatus";
 
   export default {
     name: "MainView",
     data() {
       return {
         isLogged: false,
+        username:'请登录'
       }
     },
     methods: {
       login() {
         this.isLogged = true
+        this.username = this.$cookies.get('username')
         this.$router.replace('/home')
       }
     },
@@ -53,16 +53,9 @@
       NavBar,
       NavBarItem,
       Login,
+      TopStatus
     }
   }
-
-  // router.beforeEach((to, from, next) => {
-  //   // if (to.name !== 'Login' && ! store.state.isLogged) next({ name: 'Login' })
-  //   // else
-  //   console.log(store.state.isLogged);
-  //   next()
-  // })
-
 </script>
 
 <style scoped>
