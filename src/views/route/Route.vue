@@ -13,7 +13,7 @@
         </el-button>
       </el-tab-pane>
       <el-tab-pane label="航线运价" name="RouteList">
-        <el-drawer size="60%"
+        <el-drawer size="80%"
                    :visible.sync="drawerRoute"
                    :with-header="false"
                    direction="ltr">

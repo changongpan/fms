@@ -1,7 +1,7 @@
 <template>
   <div id="top-status">
-    <div id="top-left"><span>{{companyName}}</span></div>
-    <div id="top-center">{{nowTime}}</div>
+    <div id="top-left" style="pointer-events: none;"><span>{{companyName}}</span></div>
+    <div id="top-center" style="pointer-events: none;">{{nowTime}}</div>
     <div id="top-right"><i class="el-icon-user"></i><span id="username">{{username}}</span></div>
   </div>
 </template>

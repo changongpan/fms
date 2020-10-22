@@ -32,7 +32,7 @@
       </el-form-item>
       <el-form-item label="最大载量" prop="flightMaxLoad">
         <el-input @focus="clearErr('flightMaxLoad')" v-model="newFlight.flightMaxLoad"
-                  style="text-transform:uppercase;" @input="onlyNumber"></el-input>
+                  @input="onlyNumber"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitNewFlight('newFlight')" style="width: 36%">提交</el-button>
