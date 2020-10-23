@@ -1,6 +1,6 @@
 <template>
   <div class="add-flight">
-    <h2 style="margin-left: 20%">增加新航班</h2>
+    <h2 style="margin-left: 6%">增加新航班</h2>
     <el-form :model="newFlight" :rules="newFlightRules" ref="newFlight" label-width="20%" class="demo-ruleForm"
              size="mini" style="border:1px solid darkgray;padding: 18px 0 0 0;margin: 0 6% 0 6%">
       <el-form-item label="起运港" prop="flightPOL">

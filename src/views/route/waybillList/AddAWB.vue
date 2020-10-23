@@ -1,6 +1,6 @@
 <template>
   <div class="add-awb">
-    <h2 style="margin-left: 20%">录入新运单号</h2>
+    <h2 style="margin-left: 6%">录入新运单号</h2>
     <el-form :model="newAWB" :rules="newAWBRules" ref="newAWB" label-width="20%" class="demo-dynamic"
              size="mini" style="border:1px solid darkgray;padding: 18px 0 0 0;margin: 0 6% 0 6%">
       <el-form-item label="航司" prop="airline">
@@ -12,7 +12,6 @@
       <el-form-item label="航司三位码" prop="airlineCode">
         <el-input @focus="clearErr('airlineCode')" v-model="newAWB.airlineCode" maxlength="3" tabindex="2"
                   @input="newAWB.airlineCode=$event.replace(/[^\d]/g,'')"></el-input>
-        <el-button @click="resetForm('newAWB')" type="warning" plain style="width: 18%;margin-left: 2%">重置表格</el-button>
       </el-form-item>
       <el-form-item
         v-for="(awbNo, index) in newAWB.awbNos"
@@ -33,6 +32,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm('newAWB')" style="width: 60%">提交</el-button>
+        <el-button @click="resetForm('newAWB')" type="warning" plain style="width: 18%;margin-left: 2%">重置表格</el-button>
       </el-form-item>
     </el-form>
   </div>
