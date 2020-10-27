@@ -30,10 +30,10 @@
       <el-form-item label="航司" prop="flightAirline">
         <el-input v-model="newFlight.flightAirline" :disabled="true"></el-input>
       </el-form-item>
-      <el-form-item label="最大载量" prop="flightMaxLoad">
-        <el-input @focus="clearErr('flightMaxLoad')" v-model="newFlight.flightMaxLoad"
-                  @input="onlyNumber"></el-input>
-      </el-form-item>
+<!--      <el-form-item label="最大载量" prop="flightMaxLoad">-->
+<!--        <el-input @focus="clearErr('flightMaxLoad')" v-model="newFlight.flightMaxLoad"-->
+<!--                  @input="onlyNumber"></el-input>-->
+<!--      </el-form-item>-->
       <el-form-item>
         <el-button type="primary" @click="submitNewFlight('newFlight')" style="width: 36%">提交</el-button>
         <el-button type="warning" @click="resetForm('newFlight')" style="width: 36%;margin-left: 8%">重置</el-button>
@@ -57,7 +57,7 @@
           originDate: '',
           flightType: '',
           flightAirline: '',
-          flightMaxLoad: ''
+          // flightMaxLoad: ''
         },
         newFlightRules: {
           flightPOL: [

@@ -2,7 +2,7 @@
   <div id="add-route">
     <h2 style="margin-left: 6%">新增航线</h2>
     <el-form :model="newRoute" :rules="newRouteRules" class="demo-dynamic" label-width="0px" ref="newRoute"
-             size="mini" style="border:1px solid darkgray;padding: 18px 0 0 6%;margin: 0 6% 0 6%">
+             size="mini" style="border:1px solid darkgray;padding: 18px 0 0 6%;margin: 0 6% 0 6%" @validate="validate">
       <el-form-item :disabled="true"
                     label=""
                     prop="title">
@@ -73,6 +73,7 @@
             <el-form-item :prop="'newRoutes.'+index+'.ETD'"
                           :rules="[{required: true, message: '请选择起飞时间', trigger: 'blur'}]">
               <el-time-picker
+                popper-class="time-proper"
                 placeholder="选择时间"
                 format='HH:mm'
                 value-format="HH:mm"
@@ -97,7 +98,8 @@
               <el-date-picker
                 v-model="value.validDate"
                 type="date"
-                placeholder="选择日期">
+                placeholder="选择日期"
+              style="width: 100%">
               </el-date-picker>
             </el-form-item>
           </el-col>
@@ -138,11 +140,14 @@
           title: '',
           dayOptions: ['1', '2', '3', '4', '5', '6', '7']
         },
-        newRouteRules: {
-        },
+        errState: {},
+        newRouteRules: {}
       }
     },
     methods: {
+      validate(prop,state,err){
+        this.$set(this.errState,prop,err)
+      },
       addRoute() {
         this.newRoute.newRoutes.push({
           airline: '',
@@ -156,22 +161,25 @@
       },
       removeRoute(index) {
         this.newRoute.newRoutes.splice(index, 1)
+        for(let i=index;i<this.newRoute.newRoutes.length;i++) {
+          for (let key in this.newRoute.newRoutes[i]) {
+            let prop = 'newRoutes.' + i + '.' + key
+            let newProp = 'newRoutes.' + (i + 1) + '.' + key
+            if (newProp in this.errState) {
+              this.$refs['newRoute'].validateField(prop);
+            } else {
+              this.clearErr(prop)
+            }
+          }
+        }
+        for (let key in this.newRoute.newRoutes[0]) {
+          let lastProp = 'newRoutes.' + this.newRoute.newRoutes.length + '.' + key
+          this.$delete(this.errState, lastProp)
+        }
       },
-      // //限制只能输入数字（含小数）
-      // onlyNumber(rate, index) {
-      //   //先把非数字的都替换掉，除了数字和.
-      //   rate = rate.replace(/[^\d\.]/g, '');
-      //   //必须保证第一个为数字而不是.
-      //   rate = rate.replace(/^\./g, '');
-      //   //保证只有出现一个.而没有多个.
-      //   rate = rate.replace(/\.{2,}/g, '');
-      //   //保证.只出现一次，而不能出现两次以上
-      //   rate = rate.replace('.', '$#$').replace(/\./g, '').replace('$#$', '.');
-      //   rate = rate.substring(0, 10);
-      //   this.newRoute.newRoutes[index].rate = rate
-      // },
       clearErr(prop) {
         this.$refs['newRoute'].clearValidate(prop);
+        this.$delete(this.errState,prop)
       },
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
@@ -195,6 +203,7 @@
           ETA: '',
           validDate: ''
         }];
+        this.errState = {}
       }
     }
   }
@@ -216,21 +225,45 @@
     padding: 0;
   }
 
-  /deep/ .el-input__inner {
-    padding: 0 6px 0 6px;
-    text-align: center;
-  }
-
   .el-col {
     text-align: center;
     padding: 0;
     margin: 0;
   }
 
+  /deep/ .el-input__inner {
+    padding: 0 6px 0 6px;
+    text-align: center;
+  }
+
+  /deep/ .el-checkbox-group {
+    display: flex;
+  }
+
+  /deep/ .el-checkbox-button {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
   /deep/ .el-checkbox-button__inner {
     height: 28px;
-    line-height: 28px;
-    padding: 0 3px;
-    margin: 1px 2px 0px 2px;
+    line-height: 25px;
+    margin: 1px 1px 0px 1px;
+    border-radius: 0;
+    border: 1px solid #DCDFE6;
+    padding: 0;
+    width: 100%;
   }
+
+  /deep/ .el-form-item__error {
+    left: 0;
+    right: 0;
+  }
+
+  /deep/ .time-proper{
+    width: 50px;
+  }
+
 </style>
