@@ -13,6 +13,7 @@ const Finance = () => import('views/finance/Finance')
 const Partner = () => import('views/partner/Partner')
 const Company = () => import('views/company/Company')
 const Guide = () => import('views/guide/Guide')
+const Administration = () => import('views/administration/Administration')
 
 // const AddFlight = () => import('views/route/AddFlight')
 // const CurrentFlight = () => import('views/route/CurrentFlight')
@@ -47,11 +48,11 @@ const routes = [
   {
     path: '/route',
     component: Route,
-    children: [
-      {
-        path: 'flightList',
-        component: FlightList
-      },
+    // children: [
+    //   {
+    //     path: 'flightList',
+    //     component: FlightList
+    //   },
       // {
       //   path: 'historyflight',
       //   component: HistoryFlight
@@ -64,7 +65,7 @@ const routes = [
       //   path: 'airrate',
       //   component: AirRate
       // }
-    ],
+    // ],
     name:'Route',
     meta:{
       title:'航线'
@@ -108,6 +109,14 @@ const routes = [
     name:'Partner',
     meta:{
       title:'合作伙伴'
+    }
+  },
+  {
+    path: '/administration',
+    component: Administration,
+    name:'Administration',
+    meta:{
+      title:'行政'
     }
   },
   {

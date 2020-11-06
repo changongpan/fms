@@ -16,6 +16,7 @@
             <nav-bar-item path="/opt"><span slot="item-text">操作</span></nav-bar-item>
             <nav-bar-item path="/finance"><span slot="item-text">财务</span></nav-bar-item>
             <nav-bar-item path="/partner"><span slot="item-text">合作伙伴</span></nav-bar-item>
+            <nav-bar-item path="/administration"><span slot="item-text">行政</span></nav-bar-item>
             <nav-bar-item path="/company"><span slot="item-text">我的公司</span></nav-bar-item>
             <nav-bar-item path="/guide"><span slot="item-text">工作指南</span></nav-bar-item>
           </nav-bar>
@@ -53,7 +54,7 @@
       NavBar,
       NavBarItem,
       Login,
-      TopStatus
+      TopStatus,
     }
   }
 </script>

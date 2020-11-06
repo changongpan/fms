@@ -53,6 +53,7 @@
         reader.readAsDataURL(file);
         reader.onload = event => {
           this.url = event.target.result
+          console.log(this.showSize(this.url));
         };
         this.file = file;
       },
@@ -77,6 +78,30 @@
         //       this.$message.error(this.name + "上传失败！");
         //     }
         //   }).catch(() => {});
+      },
+      //获取base64图片大小，返回kb数字
+      showSize(base64url) {
+        //把头部去掉
+        let str = base64url.replace('data:image/png;base64,', '');
+        // 找到等号，把等号也去掉
+        let equalIndex = str.indexOf('=');
+        if (str.indexOf('=') > 0) {
+          str = str.substring(0, equalIndex);
+        }
+        // 原来的字符流大小，单位为字节
+        let strLength = str.length;
+        // 计算后得到的文件流大小，单位为字节
+        let fileLength = parseInt(strLength - (strLength / 8) * 2);
+        // 由字节转换为kb
+        let size = "";
+        size = (fileLength / 1024).toFixed(2);
+        let sizeStr = size + ""; //转成字符串
+        let index = sizeStr.indexOf("."); //获取小数点处的索引
+        let dou = sizeStr.substr(index + 1, 2) //获取小数点后两位的值
+        if (dou == "00") { //判断后两位是否为00，如果是则删除00
+          return sizeStr.substring(0, index) + sizeStr.substr(index + 3, 2)
+        }
+        return size;
       },
       showOrigin(url) {
         this.centerDialogVisible = true

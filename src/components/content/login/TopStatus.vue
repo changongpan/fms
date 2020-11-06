@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import TimeSetting from "../../../commonJS/dateTime";
+  import TimeSetting from "commonjs/dateTime";
 
   export default {
     name: "TopStatus",

@@ -11,7 +11,7 @@
                   prefix-icon="el-icon-key" clearable @focus="clearErr('password')" v-model="newLogin.password"
                   onkeyup="this.value=this.value.replace(/\s+/g,'')"></el-input>
       </el-form-item>
-      <el-form-item >
+      <el-form-item>
         <el-alert style="line-height: 10px"
           :title="loginErr" type="error" :closable="false" show-icon v-if="loginErr">
         </el-alert>
@@ -32,11 +32,15 @@
 
   export default {
     name: "Login",
+    components:{
+    },
     data() {
       return {
+        addArr:[],
         newLogin: {
           username: '',
           password: '',
+          isLogged : false,
           isRemember: false,
         },
         loginRules: {
@@ -74,9 +78,10 @@
             this.$cookies.set('username',this.newLogin.username,'7d');
             this.$cookies.set('password',this.newLogin.password,'7d');
             this.$cookies.set('isRemember',this.newLogin.isRemember,'7d');
+            this.newLogin.isLogged = true;
+            this.$store.commit('setLogin',this.newLogin);
             this.$refs['newLogin'].resetFields();
             this.newLogin.isRemember=false;
-            this.$store.commit('setLogin',true);
             this.$emit('isLogin');
           } else {
             this.loginErr = '用户名或者密码错误';
